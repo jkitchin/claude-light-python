@@ -1,0 +1,24 @@
+name: Claude light
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '59 23 * * *'  # daily at 11:59pm
+
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        
+      - name: Install dependencies
+        run: pip install -e .
+        
+      - shell: bash
+        
+        run: |
+	    pwd
+	    ls
+	
