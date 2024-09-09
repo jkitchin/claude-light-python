@@ -13,4 +13,4 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           pip install -e .
-	  python claude_light/test.py
+          python claude_light/test.py
