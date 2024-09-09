@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "claude_light"
+authors = [{name = "John Kitchin", email = "jkitchin@andrew.cmu.edu"}]
+dependencies = [
+	     "retry",
+	     "requests"]
+license = {text = "MIT"}
+dynamic = ["version"]
+

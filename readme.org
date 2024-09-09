@@ -1,0 +1,95 @@
+#+title: Claude Light python interface
+
+See https://github.com/jkitchin/claude-light?tab=readme-ov-file#Usage for details about Claude Light. This library provides a Python interface to that instrument that is designed for use in Jupyter notebooks (although scripts work too).
+
+This interface provides a variety of virtual interfaces to Claude Light. There is an introductory instrument with one input/output, one for one input / many outputs, many inputs / many outputs, and a general purpose instrument you can use to get all the data possible.
+
+* Installation
+
+This package is only available on GitHUB. You have two options:
+
+#+BEGIN_SRC sh
+pip install git+https://github.com/jkitchin/claude-light-python.git
+#+END_SRC
+
+or 
+
+#+BEGIN_SRC sh
+git clone https://github.com/jkitchin/claude-light-python.git
+cd claude-light-python
+pip install .
+#+END_SRC
+
+
+* Usage
+
+** GreenMachine1
+
+This is the introductory instrument. You can change one input value, the Green level, and you get one number back, the output of the 515nm channel.
+
+#+BEGIN_SRC jupyter-python
+from claude_light import GreenMachine1
+
+gm = GreenMachine1()
+
+# Background and G=0.2
+gm(), gm(G=0.2)
+#+END_SRC
+
+#+RESULTS:
+| 1571 | 13954 |
+
+** GreenMachine3
+
+The next instrument still has one input, but you get three outputs which are the intensities at 630 nm (red), 515nm (greenish), and 445 nm (bluish). Each of these depends on the Green input setting to different degrees.
+
+#+BEGIN_SRC jupyter-python  
+from claude_light import GreenMachine3
+
+gm3 = GreenMachine3()
+
+# Background and G=0.2
+gm3(), gm3(G=0.2)
+#+END_SRC
+
+#+RESULTS:
+| 3033 |  1599 | 1032 |
+| 3278 | 13883 | 1096 |
+
+** CLRGB
+
+This instrument has three inputs and three outputs. You can use this instrument to explore multivariate regression.
+
+#+BEGIN_SRC jupyter-python
+from claude_light import CLRGB
+
+cl = CLRGB()
+cl(), cl(R=0.1, G=0.2, B=0.3)
+#+END_SRC
+
+#+RESULTS:
+| 2977 |  1585 |  1032 |
+| 6607 | 14139 | 10113 |
+
+
+** CLLight
+
+This is the most general instrument. You set the RGB inputs, and you get all the outputs from the color sensor.
+
+#+BEGIN_SRC jupyter-python
+from claude_light import CLLight
+
+cll = CLLight()
+cll() # background
+#+END_SRC
+
+#+RESULTS:
+| in | : | (0.0 0.0 0.0) | out | : | (415nm : 534 445nm : 1023 480nm : 1242 515nm : 1569 555nm : 2530 590nm : 2495 630nm : 2938 680nm : 1589 clear : 13958 nir : 9515) |
+
+#+BEGIN_SRC jupyter-python  
+cll(R=0.1, G=0.2, B=0.3)
+#+END_SRC
+
+#+RESULTS:
+| in | : | (0.1 0.2 0.3) | out | : | (415nm : 1114 445nm : 10099 480nm : 6096 515nm : 14195 555nm : 4700 590nm : 4603 630nm : 6587 680nm : 2156 clear : 35438 nir : 10100) |
+
