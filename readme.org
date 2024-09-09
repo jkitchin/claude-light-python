@@ -4,9 +4,9 @@ See https://github.com/jkitchin/claude-light?tab=readme-ov-file#Usage for detail
 
 This interface provides a variety of virtual interfaces to Claude Light. There is an introductory instrument with one input/output, one for one input / many outputs, many inputs / many outputs, and a general purpose instrument you can use to get all the data possible.
 
-#+BEGIN_EXPORT html
+#+BEGIN_HTML
 <a href="https://github.com/jkitchin/claude-light-python/actions/workflows/claude-light.yaml"><img src="https://github.com/jkitchin/claude-light-python/actions/workflows/claude-light.yaml/badge.svg"></a>
-#+END_EXPORT
+#+END_HTML
 
 * Installation
 
