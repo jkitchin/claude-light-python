@@ -7,17 +7,10 @@ on:
 
 
 jobs:
-
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        
-      - name: Install dependencies
-        run: pip install -e .
-        
-      - shell: bash
-        
-        run: |
-            pwd
-	    ls
+      - run: |
+          pip install -e claude_light
+ 
