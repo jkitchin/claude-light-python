@@ -12,7 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          ls
 	  pip install retry requests
           pip install .
           python claude_light/test.py
