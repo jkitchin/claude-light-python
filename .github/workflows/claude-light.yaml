@@ -14,4 +14,3 @@ jobs:
       - run: |
           pip install -e .
 	  python claude_light/test.py
- 
