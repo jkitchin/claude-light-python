@@ -1,7 +1,7 @@
 import requests
 from retry import retry
 
-CLAUDE_IP = 'http://claude-light.cheme.cmu.edu:5000/api'
+CLAUDE_IP = 'http://claude-light.cheme.cmu.edu/api'
 
 class GreenMachine1:
     """One input -> one output instrument.
