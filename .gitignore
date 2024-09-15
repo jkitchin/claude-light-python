@@ -1,0 +1,4 @@
+/.ipynb_checkpoints/
+/build/
+/claude_light.egg-info/
+/claude_light/__pycache__/
