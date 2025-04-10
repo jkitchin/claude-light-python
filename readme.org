@@ -16,7 +16,7 @@ This package is only available on GitHUB. You have two options:
 pip install git+https://github.com/jkitchin/claude-light-python.git
 #+END_SRC
 
-or 
+or
 
 #+BEGIN_SRC sh
 git clone https://github.com/jkitchin/claude-light-python.git
@@ -29,3 +29,14 @@ pip install .
 
 The best way to see the usage is to review this notebook: [[./usage.ipynb]].
 
+* MCP server for Claude Desktop
+
+There is now an MCP server available for claude-light!
+
+After you install this package, run:
+
+#+BEGIN_SRC sh
+cl_mcp install
+#+END_SRC
+
+and restart Claude Desktop. This should install two tools that you can use in the Desktop app.
